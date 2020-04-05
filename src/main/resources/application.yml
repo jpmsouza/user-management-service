@@ -1,1 +1,18 @@
-
+spring:
+  application:
+    name: user-management
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    drive-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/h2db
+    username: admin
+    password: admin
+  jpa:
+    show-sql: true
+  server:
+    port: 8082
+  jackson:
+    serialization.write-dates-as-timestamps: false
