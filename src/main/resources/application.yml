@@ -1,3 +1,5 @@
+server:
+  port: 8082
 spring:
   application:
     name: user-management
@@ -6,13 +8,11 @@ spring:
       enabled: true
       path: /h2-console
   datasource:
-    drive-class-name: org.h2.Driver
+    driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:h2db
     username: admin
     password: admin
   jpa:
     show-sql: true
-  server:
-    port: 8082
   jackson:
     serialization.write-dates-as-timestamps: false
