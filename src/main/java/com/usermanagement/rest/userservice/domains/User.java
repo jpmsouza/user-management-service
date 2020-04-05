@@ -30,4 +30,12 @@ public class User {
 
     @Column(name = "STATUS")
     private boolean status;
+
+    @ManyToOne
+    @JoinColumn(name = "NUM_ROLE_ID")
+    private Role userRole;
+
+    @ManyToOne
+    @JoinColumn(name = "NUM_PROFILE_ID")
+    private Profile userProfile;
 }

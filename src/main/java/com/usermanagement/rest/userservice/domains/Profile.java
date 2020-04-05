@@ -1,9 +1,11 @@
 package com.usermanagement.rest.userservice.domains;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,4 +20,8 @@ public class Profile {
 
     @Column(name = "STR_PROFILE")
     private String profile;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "userProfile")
+    private Set<User> users;
 }
