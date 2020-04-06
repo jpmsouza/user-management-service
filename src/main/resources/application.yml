@@ -14,5 +14,7 @@ spring:
     password: admin
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: none
   jackson:
     serialization.write-dates-as-timestamps: false

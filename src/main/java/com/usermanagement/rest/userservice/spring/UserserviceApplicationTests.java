@@ -1,4 +1,4 @@
-package com.usermanagement.rest.userservice.boot;
+package com.usermanagement.rest.userservice.spring;
 
 
 import org.junit.Test;
