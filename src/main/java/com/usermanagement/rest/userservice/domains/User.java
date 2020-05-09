@@ -1,5 +1,6 @@
 package com.usermanagement.rest.userservice.domains;
 
+import com.usermanagement.rest.userservice.domains.composities.UserId;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
@@ -8,17 +9,15 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
+@IdClass(UserId.class)
 @Table(name = "USER")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "NUM_ID")
-    private long id;
-
     @Column(name = "STR_NAME")
     private String name;
 
+    @Id
     @Column(name = "STR_CPF")
     private String cpf;
 

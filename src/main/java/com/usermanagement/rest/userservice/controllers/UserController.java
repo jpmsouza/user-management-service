@@ -25,23 +25,4 @@ public class UserController {
         return new ResponseEntity<List<User>>(userService.findAllUsers(), HttpStatus.OK);
     }
 
-    /**
-     *
-     * @param idUser
-     * @return
-     */
-    @GetMapping("/{idUser}")
-    public ResponseEntity<User> getAllUsersById(@PathVariable long idUser){
-        return new ResponseEntity<User>(userService.findUserById(idUser), HttpStatus.OK);
-    }
-
-    /**
-     *
-     * @param cpfUser
-     * @return
-     */
-    @GetMapping(params = "cpf")
-    public ResponseEntity<User> getUserByCpf(@RequestParam("cpf") String cpfUser){
-        return new ResponseEntity<User>(userService.findUserByCpf(cpfUser),HttpStatus.OK);
-    }
 }
