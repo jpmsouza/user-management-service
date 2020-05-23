@@ -17,12 +17,18 @@ public class UserController {
     private UserService userService;
 
     /**
+     * Get all users
      *
      * @return
      */
     @GetMapping()
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<List<User>>(userService.findAllUsers(), HttpStatus.OK);
+    }
+
+    @PostMapping()
+    public ResponseEntity<User> createNewUser(@RequestBody User user){
+        return new ResponseEntity<User>(userService.saveUser(user),HttpStatus.CREATED);
     }
 
 }

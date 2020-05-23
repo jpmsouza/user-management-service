@@ -11,9 +11,4 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value = "select u from User u")
     List<User> findAllUsers();
-
-    @Query(value = "select u from User u where u.id = :idUser")
-    User findUserById(@Param("idUser")long idUser);
-
-    User findUserByCpf(String cpf);
 }

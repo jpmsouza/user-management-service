@@ -14,6 +14,7 @@ public class UserService {
     private UserRepository userRepository;
 
     /**
+     * Find all user
      *
      * @return
      */
@@ -21,21 +22,7 @@ public class UserService {
         return userRepository.findAllUsers();
     }
 
-    /**
-     *
-     * @param idUser
-     * @return
-     */
-    public User findUserById(long idUser){
-        return userRepository.findUserById(idUser);
-    }
-
-    /**
-     *
-     * @param cpf
-     * @return
-     */
-    public User findUserByCpf(String cpf){
-        return userRepository.findUserByCpf(cpf);
+    public User saveUser(User user){
+        return userRepository.save(user);
     }
 }
