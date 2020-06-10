@@ -11,4 +11,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value = "select u from User u")
     List<User> findAllUsers();
+
+    boolean existsByCpfAndName(String cpf, String name);
+
 }

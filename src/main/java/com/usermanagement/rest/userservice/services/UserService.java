@@ -1,28 +1,28 @@
 package com.usermanagement.rest.userservice.services;
 
 import com.usermanagement.rest.userservice.domains.User;
-import com.usermanagement.rest.userservice.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class UserService {
-
-    @Autowired
-    private UserRepository userRepository;
+/**
+ * Interface to abstract the implementation of Services provided to handle User information
+ */
+public interface UserService {
 
     /**
      * Find all user
      *
-     * @return
+     * @return List of User Objects
+     * @author João Pedro Martins Souza
      */
-    public List<User> findAllUsers(){
-        return userRepository.findAllUsers();
-    }
+   public List<User> findAllUsers();
 
-    public User saveUser(User user){
-        return userRepository.save(user);
-    }
+    /**
+     * Crate/Insert a new User register
+     * @param user User object
+     * @return User Object
+     * @author João Pedro Martins Souza
+     */
+   public User saveUser(User user);
+
 }
