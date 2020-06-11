@@ -1,5 +1,6 @@
 package com.usermanagement.rest.userservice.utils;
 
+import com.usermanagement.rest.userservice.utils.constants.ResponseMessages;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,7 +17,7 @@ public class ExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(Utils.builderBodyResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 ex.getMessage(),
-                "Register already exist!"
+                ResponseMessages.REGISTER_ALREADY_EXIST
         ), HttpStatus.BAD_REQUEST);
     }
 }
