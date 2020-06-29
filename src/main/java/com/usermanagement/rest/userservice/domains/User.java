@@ -9,11 +9,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@IdClass(UserId.class)
 @Table(name = "USER")
 public class User {
 
-    @Id
     @Column(name = "STR_NAME")
     private String name;
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityExistsException;
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 /**
@@ -37,11 +38,27 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User saveUser(User user){
-        if(userRepository.existsByCpfAndName(user.getCpf(),user.getName())){
+        if(userRepository.existsByCpf(user.getCpf())){
             throw new EntityExistsException();
         }else {
             return userRepository.save(user);
         }
 
     }
+
+    /**
+     * Delete user from data base
+     *
+     * @param cpf String value
+     * @author João Pedro Martins Souza
+     */
+    @Override
+    public void deleteUserByCpf(String cpf) {
+        if(userRepository.existsByCpf(cpf)){
+            userRepository.deleteByCpf(cpf);
+        }else{
+            throw new EntityNotFoundException();
+        }
+    }
+
 }

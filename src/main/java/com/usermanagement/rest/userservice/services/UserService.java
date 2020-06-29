@@ -25,4 +25,12 @@ public interface UserService {
      */
    public User saveUser(User user);
 
+    /**
+     * Delete user from data base
+     *
+     * @param cpf String value
+     * @author João Pedro Martins Souza
+     */
+   public void deleteUserByCpf(String cpf);
+
 }

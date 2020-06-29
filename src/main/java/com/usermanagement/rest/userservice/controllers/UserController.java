@@ -20,15 +20,29 @@ public class UserController {
      * Get all users
      *
      * @return ResponseEntity Object list user
+     * @author João Pedro Martins Souza
      */
     @GetMapping()
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<List<User>>(userService.findAllUsers(), HttpStatus.OK);
     }
 
+    /**
+     * Post to create a new user
+     *
+     * @param user User object
+     * @return User object create
+     * @author João Pedro Martins Souza
+     */
     @PostMapping()
     public ResponseEntity<User> createNewUser(@RequestBody User user){
         return new ResponseEntity<User>(userService.saveUser(user),HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{cpf}")
+    public ResponseEntity<Object> deleteUser(@PathVariable String cpf){
+        userService.deleteUserByCpf(cpf);
+        return new ResponseEntity<Object>(HttpStatus.OK);
     }
 
 }
