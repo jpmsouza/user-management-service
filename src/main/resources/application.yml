@@ -19,3 +19,7 @@ spring:
       ddl-auto: none
   jackson:
     serialization.write-dates-as-timestamps: false
+  security:
+    user:
+      name: admin
+      password: admin
